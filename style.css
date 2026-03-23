@@ -305,3 +305,61 @@ a {
     grid-template-rows: 210px auto;
   }
 }
+.editorial-mini-thumb img,
+.editorial-intro-bg img,
+.editorial-hero-image img {
+  transition: transform .7s ease, filter .5s ease;
+}
+
+.editorial-mini-card:hover .editorial-mini-thumb img,
+.editorial-intro:hover .editorial-intro-bg img {
+  transform: scale(1.045);
+  filter: brightness(1.03);
+}
+
+.editorial-hero:hover .editorial-hero-image img {
+  transform: scale(1.02);
+}
+
+.editorial-hero-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.62) 0%,
+    rgba(0,0,0,.22) 38%,
+    rgba(0,0,0,.05) 100%
+  );
+}
+
+.editorial-intro-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.58) 0%,
+    rgba(0,0,0,.18) 42%,
+    rgba(0,0,0,.04) 100%
+  );
+}
+
+.editorial-hero-content h2 {
+  font-size: 56px;
+  line-height: .95;
+  letter-spacing: -.04em;
+  max-width: 640px;
+}
+
+.editorial-intro-inner h3 {
+  font-size: 24px;
+  line-height: 1.04;
+  max-width: 500px;
+}
+
+.editorial-hero-actions a {
+  min-width: 170px;
+  height: 50px;
+  padding: 0 22px;
+  transition: all .28s ease, transform .28s ease, box-shadow .28s ease;
+}
+
+.btn-light:hover,
+.btn-outline:hover {
+  transform: translateY(-1px);
+}
