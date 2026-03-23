@@ -41,6 +41,15 @@ a {
   align-items: stretch;
 }
 
+/* ===== HERO + SIDE FULL HEIGHT ===== */
+.editorial-hero,
+.editorial-side {
+  height: calc(100vh - 80px);
+  min-height: 720px;
+  max-height: 980px;
+}
+
+/* ===== COMMON ===== */
 .editorial-hero,
 .editorial-intro,
 .editorial-mini-card {
@@ -49,16 +58,7 @@ a {
   background: #f3efe8;
 }
 
-/* ===== FIX CHÍNH Ở ĐÂY ===== */
-.editorial-hero,
-.editorial-side {
-  height: calc(100vh - 80px);
-  min-height: 720px;
-  max-height: 980px;
-}
-
-/* =========================== */
-
+/* ===== HERO ===== */
 .editorial-hero-image,
 .editorial-intro-bg,
 .editorial-mini-thumb {
@@ -169,16 +169,17 @@ a {
   border-color: #fff;
 }
 
-/* ===== SIDE FIX ===== */
+/* ===== RIGHT SIDE FIX ===== */
 .editorial-side {
   display: grid;
-  grid-template-rows: 22% 1fr;
+  grid-template-rows: 22% 78%;
   gap: 0;
+  overflow: hidden;
 }
 
 .editorial-intro {
-  height: 100%;
-  min-height: unset;
+  height: auto;
+  min-height: 0;
 }
 
 .editorial-mini-grid {
@@ -186,14 +187,16 @@ a {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 0;
-  height: 100%;
+  height: auto;
+  min-height: 0;
+  overflow: hidden;
 }
-/* ===================== */
 
 .editorial-mini-card {
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 0;
   background: #fff;
 }
 
