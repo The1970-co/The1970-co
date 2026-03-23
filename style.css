@@ -132,7 +132,7 @@ img {
 .editorial-mini-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 16px;
 }
 
 .editorial-mini-card {
