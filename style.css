@@ -17,9 +17,9 @@ img {
 }
 
 .the1970-editorial {
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: 20px 20px;
+  width: 100%;
+  max-width: none;
+  padding: 0;
 }
 
 .the1970-editorial-grid {
