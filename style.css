@@ -50,8 +50,8 @@ a {
 }
 
 .editorial-hero {
-  height: 800px;
-  min-height: 800px;
+  height: 85vh;
+  min-height: 700px;
 }
 
 .editorial-hero-image,
@@ -166,7 +166,7 @@ a {
 
 .editorial-side {
   display: grid;
-  grid-template-rows: 200px 1fr;
+  grid-template-rows: 25% 75%;
   gap: 0;
   height: 800px;
   min-height: 800px;
