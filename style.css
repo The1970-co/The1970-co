@@ -49,10 +49,15 @@ a {
   background: #f3efe8;
 }
 
-.editorial-hero {
-  height: 980px;
-  min-height: 980px;
+/* ===== FIX CHÍNH Ở ĐÂY ===== */
+.editorial-hero,
+.editorial-side {
+  height: calc(100vh - 80px);
+  min-height: 720px;
+  max-height: 980px;
 }
+
+/* =========================== */
 
 .editorial-hero-image,
 .editorial-intro-bg,
@@ -164,17 +169,16 @@ a {
   border-color: #fff;
 }
 
+/* ===== SIDE FIX ===== */
 .editorial-side {
   display: grid;
-  grid-template-rows: 240px 1fr;
+  grid-template-rows: 22% 1fr;
   gap: 0;
-  height: 980px;
-  min-height: 980px;
 }
 
 .editorial-intro {
-  min-height: 240px;
-  height: 240px;
+  height: 100%;
+  min-height: unset;
 }
 
 .editorial-mini-grid {
@@ -182,8 +186,9 @@ a {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 0;
-  height: 740px;
+  height: 100%;
 }
+/* ===================== */
 
 .editorial-mini-card {
   display: flex;
@@ -232,51 +237,30 @@ a {
   color: rgba(42, 41, 38, .55);
 }
 
+/* ===== RESPONSIVE ===== */
+
 @media (max-width: 1200px) {
   .the1970-editorial-grid {
     grid-template-columns: 1.08fr 0.92fr;
   }
 
-  .editorial-hero {
+  .editorial-hero,
+  .editorial-side {
     height: 720px;
     min-height: 720px;
   }
 
   .editorial-side {
-    height: 720px;
-    min-height: 720px;
     grid-template-rows: 180px 1fr;
-  }
-
-  .editorial-intro {
-    height: 180px;
-    min-height: 180px;
-  }
-
-  .editorial-mini-grid {
-    height: 540px;
   }
 
   .editorial-hero-content h2 {
     font-size: 44px;
     max-width: 520px;
   }
-
-  .editorial-mini-content h4 {
-    font-size: 16px;
-  }
 }
 
 @media (max-width: 991px) {
-  html,
-  body {
-    height: auto;
-  }
-
-  body {
-    overflow-y: auto;
-  }
-
   .the1970-editorial-grid {
     grid-template-columns: 1fr;
   }
@@ -292,19 +276,8 @@ a {
     grid-template-rows: 230px auto;
   }
 
-  .editorial-intro {
-    height: 230px;
-    min-height: 230px;
-  }
-
   .editorial-mini-grid {
     height: auto;
-    grid-template-rows: auto auto;
-  }
-
-  .editorial-hero-content h2 {
-    font-size: 40px;
-    max-width: 100%;
   }
 }
 
@@ -323,40 +296,9 @@ a {
 
   .editorial-hero-content h2 {
     font-size: 32px;
-    margin-bottom: 10px;
-  }
-
-  .editorial-hero-content p,
-  .editorial-intro-inner p {
-    font-size: 14px;
   }
 
   .editorial-side {
     grid-template-rows: 210px auto;
-  }
-
-  .editorial-intro {
-    height: 210px;
-    min-height: 210px;
-  }
-
-  .editorial-mini-content {
-    padding: 12px 14px;
-    min-height: 62px;
-  }
-
-  .editorial-mini-content h4 {
-    font-size: 15px;
-    margin-bottom: 4px;
-  }
-
-  .editorial-mini-content span {
-    font-size: 9px;
-  }
-
-  .editorial-hero-actions a {
-    min-width: 145px;
-    height: 44px;
-    font-size: 13px;
   }
 }
