@@ -24,7 +24,7 @@ img {
 
 .the1970-editorial-grid {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  grid-template-columns: 1.0fr 1fr;
   gap: 18px;
   align-items: stretch;
 }
