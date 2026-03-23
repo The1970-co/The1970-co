@@ -198,3 +198,11 @@ img {
 body {
   font-family: 'Georgia', 'Times New Roman', serif;
 }
+
+.the1970-editorial {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 24px;
+
+  height: calc(100vh - 80px);
+}
