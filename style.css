@@ -53,7 +53,7 @@ a {
 
 .editorial-hero {
   min-height: 800px;
-  height: 800px;
+  height: calc(100vh - 40px);
 }
 
 .editorial-hero-image,
