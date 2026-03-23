@@ -575,3 +575,11 @@ a {
   font-size: 23px;
   font-weight: 400;
 }
+.the1970-brand {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #1e1b18;
+  text-transform: uppercase;
+}
