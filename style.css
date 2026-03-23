@@ -81,7 +81,9 @@ img {
 }
 
 .editorial-hero-content h2 {
-  font-size: 42px;
+  font-size: 34px;
+  max-width: 500px;
+}
   line-height: 1.05;
   margin-bottom: 12px;
 }
