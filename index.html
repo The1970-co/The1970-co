@@ -82,15 +82,3 @@
   </div>
 </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  var path = window.location.pathname.replace(/\/+$/, '');
-  var isHome = (path === '' || path === '/');
-
-  if (!isHome) {
-    document.querySelectorAll('.the1970-editorial').forEach(function(el){
-      el.remove();
-    });
-  }
-});
-</script>
