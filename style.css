@@ -551,3 +551,27 @@ a {
     font-size: 18px;
   }
 }
+.the1970-brand {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.the1970-mainnav a,
+.the1970-top-actions a {
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+.the1970-featured-head {
+  gap: 14px;
+}
+
+.the1970-featured-head span {
+  background: rgba(42, 41, 38, .12);
+}
+
+.the1970-featured-head h3 {
+  font-size: 23px;
+  font-weight: 400;
+}
