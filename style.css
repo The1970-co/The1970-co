@@ -170,7 +170,7 @@ a {
   display: grid;
   grid-template-rows: 210px auto;
   gap: 0;
-  height: 810px;
+  height: 850px;
 }
 
 .editorial-intro {
