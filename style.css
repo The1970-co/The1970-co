@@ -168,8 +168,8 @@ a {
   display: grid;
   grid-template-rows: 25% 75%;
   gap: 0;
-  height: 800px;
-  min-height: 800px;
+  height: 85vh;
+  min-height: 600px;
 }
 
 .editorial-intro {
