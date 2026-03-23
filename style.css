@@ -160,8 +160,8 @@ a {
 
 .editorial-side {
   display: grid;
-  grid-template-rows: 30% 70%;
-  min-height: 100vh;
+  grid-template-rows: 26% 74%;
+  height: 100%;
 }
 
 .editorial-intro {
@@ -319,4 +319,30 @@ a {
   .editorial-mini-content span {
     font-size: 10px;
   }
+}
+body {
+  overflow: hidden;
+}
+html, body {
+  height: 100%;
+}
+
+.the1970-editorial {
+  height: 100vh;
+}
+
+.the1970-editorial-grid {
+  height: 100%;
+}
+
+.editorial-hero,
+.editorial-side {
+  height: 100%;
+}
+.editorial-mini-grid {
+  height: 100%;
+}
+
+.editorial-mini-card {
+  height: 100%;
 }
