@@ -83,7 +83,6 @@ img {
 .editorial-hero-content h2 {
   font-size: 34px;
   max-width: 500px;
-}
   line-height: 1.05;
   margin-bottom: 12px;
 }
@@ -121,12 +120,12 @@ img {
 
 .editorial-side {
   display: grid;
-  grid-template-rows: 1fr auto;
-  gap: 24px;
+  grid-template-rows: 220px auto;
+  gap: 18px;
 }
 
 .editorial-intro {
-  min-height: 340px;
+  min-height: 220px;
 }
 
 .editorial-mini-grid {
@@ -197,12 +196,12 @@ img {
 }
 body {
   font-family: 'Georgia', 'Times New Roman', serif;
+  background: #fff;
+  color: #111;
 }
 
 .the1970-editorial {
-  max-width: 1400px;
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 40px 24px;
-
-  height: calc(100vh - 80px);
+  padding: 20px 20px;
 }
