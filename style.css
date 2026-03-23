@@ -168,13 +168,13 @@ a {
 
 .editorial-side {
   display: grid;
-  grid-template-rows: 190px auto;
+  grid-template-rows: 210px auto;
   gap: 0;
-  height: 760px;
+  height: 800px;
 }
 
 .editorial-intro {
-  min-height: 190px;
+  min-height: 210px;
 }
 
 .editorial-mini-grid {
@@ -192,7 +192,7 @@ a {
 }
 
 .editorial-mini-thumb {
-  aspect-ratio: 1 / 0.82;
+  aspect-ratio: 1 / 0.9;
   overflow: hidden;
 }
 
