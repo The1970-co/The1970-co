@@ -1,9 +1,7 @@
-/* =========================
-   THE 1970 EDITORIAL SECTION
-========================= */
+/* ===== THE 1970 EDITORIAL SAFE VERSION ===== */
 
 .the1970-editorial {
-  padding: 28px 24px;
+  padding: 24px 20px;
   background: #f6f1e8;
 }
 
@@ -11,18 +9,16 @@
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   gap: 18px;
-  align-items: stretch;
+  align-items: start;
 }
 
-/* LEFT HERO */
 .editorial-hero {
   position: relative;
-  height: 760px;
-  min-height: 760px;
   overflow: hidden;
   background: #ddd;
+  min-height: 680px;
 }
 
 .editorial-hero-image,
@@ -32,6 +28,11 @@
   display: block;
 }
 
+.editorial-hero-image {
+  position: absolute;
+  inset: 0;
+}
+
 .editorial-hero-image img {
   object-fit: cover;
 }
@@ -39,19 +40,14 @@
 .editorial-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.42) 0%,
-    rgba(0, 0, 0, 0.14) 45%,
-    rgba(0, 0, 0, 0.04) 100%
-  );
+  background: linear-gradient(to top, rgba(0,0,0,.38) 0%, rgba(0,0,0,.10) 55%, rgba(0,0,0,.02) 100%);
 }
 
 .editorial-hero-content {
   position: absolute;
-  left: 34px;
-  right: 34px;
-  bottom: 34px;
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
   color: #fff;
   z-index: 2;
 }
@@ -61,18 +57,17 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 10px;
-  opacity: 0.9;
 }
 
 .editorial-hero-content h2 {
   margin: 0 0 10px;
-  font-size: 42px;
-  line-height: 1.08;
+  font-size: 40px;
+  line-height: 1.1;
   font-weight: 500;
 }
 
 .editorial-hero-content p {
-  margin: 0 0 20px;
+  margin: 0 0 18px;
   font-size: 15px;
   line-height: 1.6;
   max-width: 520px;
@@ -80,20 +75,18 @@
 
 .editorial-hero-actions {
   display: flex;
-  gap: 12px;
   flex-wrap: wrap;
+  gap: 12px;
 }
 
 .editorial-hero-actions a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
-  padding: 0 20px;
+  min-height: 44px;
+  padding: 0 18px;
   text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 0.4px;
-  transition: all 0.28s ease;
+  transition: .25s ease;
 }
 
 .btn-light {
@@ -102,55 +95,57 @@
   border: 1px solid #fff;
 }
 
-.btn-light:hover {
-  background: transparent;
-  color: #fff;
-}
-
 .btn-dark {
   background: transparent;
   color: #fff;
-  border: 1px solid rgba(255,255,255,0.8);
+  border: 1px solid rgba(255,255,255,.85);
 }
 
-.btn-dark:hover {
-  background: #fff;
-  color: #111;
-}
-
-/* RIGHT SIDE */
 .editorial-side {
   display: grid;
-  grid-template-rows: 30% 70%;
-  height: 760px;
-  min-height: 760px;
+  grid-template-rows: 220px auto;
   gap: 18px;
 }
 
-/* TOP CARD */
-.editorial-feature {
+.editorial-feature,
+.editorial-card {
   position: relative;
   overflow: hidden;
-  background: #d9d3ca;
+  background: #ddd;
 }
 
-.editorial-feature img {
+.editorial-feature {
+  min-height: 220px;
+}
+
+.editorial-feature img,
+.editorial-card img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform .35s ease;
 }
 
-.editorial-feature:hover img {
+.editorial-feature:hover img,
+.editorial-card:hover img {
   transform: scale(1.04);
+}
+
+.editorial-feature::after,
+.editorial-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.34) 0%, rgba(0,0,0,.10) 55%, rgba(0,0,0,.02) 100%);
+  pointer-events: none;
 }
 
 .editorial-feature-content {
   position: absolute;
-  left: 22px;
-  right: 22px;
-  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
   color: #fff;
   z-index: 2;
 }
@@ -168,45 +163,14 @@
   line-height: 1.5;
 }
 
-/* BOTTOM GRID */
 .editorial-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
-  min-height: 0;
 }
 
 .editorial-card {
-  position: relative;
-  overflow: hidden;
-  background: #e7e0d6;
-  min-height: 0;
-}
-
-.editorial-card img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  transition: transform 0.45s ease;
-}
-
-.editorial-card:hover img {
-  transform: scale(1.05);
-}
-
-.editorial-card::after,
-.editorial-feature::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.34) 0%,
-    rgba(0, 0, 0, 0.12) 45%,
-    rgba(0, 0, 0, 0.02) 100%
-  );
-  pointer-events: none;
+  min-height: 250px;
 }
 
 .editorial-card-content {
@@ -228,65 +192,37 @@
 .editorial-card-content span {
   display: inline-block;
   font-size: 12px;
-  letter-spacing: 0.4px;
 }
 
-/* LINK FULL CARD */
-.editorial-feature a,
-.editorial-card a {
+.editorial-feature > a,
+.editorial-card > a {
   position: absolute;
   inset: 0;
   z-index: 3;
   text-indent: -9999px;
 }
 
-/* TABLET */
 @media (max-width: 1199px) {
   .the1970-editorial-grid {
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1fr;
   }
 
-  .editorial-hero,
+  .editorial-hero {
+    min-height: 620px;
+  }
+
   .editorial-side {
-    height: 680px;
-    min-height: 680px;
-  }
-
-  .editorial-hero-content h2 {
-    font-size: 34px;
+    grid-template-rows: 220px auto;
   }
 }
 
-/* MOBILE */
 @media (max-width: 767px) {
   .the1970-editorial {
     padding: 16px;
   }
 
-  .the1970-editorial-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
   .editorial-hero {
-    height: 520px;
-    min-height: 520px;
-  }
-
-  .editorial-side {
-    grid-template-rows: 220px auto;
-    height: auto;
-    min-height: unset;
-    gap: 14px;
-  }
-
-  .editorial-cards {
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-  }
-
-  .editorial-card {
-    aspect-ratio: 0.82 / 1;
+    min-height: 480px;
   }
 
   .editorial-hero-content {
@@ -299,15 +235,12 @@
     font-size: 28px;
   }
 
-  .editorial-hero-content p {
-    font-size: 14px;
+  .editorial-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
   }
 
-  .editorial-feature-content h3 {
-    font-size: 20px;
-  }
-
-  .editorial-card-content h4 {
-    font-size: 16px;
+  .editorial-card {
+    min-height: 220px;
   }
 }
