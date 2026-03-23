@@ -627,3 +627,119 @@ a {
   opacity: 1;
   transform: scale(1);
 }
+.the1970-story-block {
+  background: #f5efe8;
+  padding: 0 28px 42px;
+}
+
+.the1970-story-media {
+  position: relative;
+  display: block;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+  aspect-ratio: 16 / 7;
+  background: #ddd;
+}
+
+.the1970-story-media img,
+.the1970-story-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .8s ease;
+}
+
+.the1970-story-media:hover img,
+.the1970-story-media:hover video {
+  transform: scale(1.03);
+}
+
+.the1970-story-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.52) 0%,
+    rgba(0,0,0,.18) 42%,
+    rgba(0,0,0,.05) 100%
+  );
+}
+
+.the1970-story-content {
+  position: absolute;
+  left: 42px;
+  bottom: 42px;
+  max-width: 680px;
+  color: #fff;
+  z-index: 2;
+}
+
+.the1970-story-kicker {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.the1970-story-content h2 {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 52px;
+  line-height: .98;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+.the1970-story-content p {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  margin-bottom: 20px;
+  max-width: 520px;
+}
+
+.the1970-story-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 168px;
+  height: 48px;
+  padding: 0 22px;
+  border: 1px solid rgba(255,255,255,.78);
+  border-radius: 999px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  transition: all .28s ease;
+}
+
+.the1970-story-media:hover .the1970-story-btn {
+  background: rgba(255,255,255,.10);
+}
+
+@media (max-width: 767px) {
+  .the1970-story-block {
+    padding: 0 16px 28px;
+  }
+
+  .the1970-story-media {
+    aspect-ratio: 4 / 5;
+  }
+
+  .the1970-story-content {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    max-width: none;
+  }
+
+  .the1970-story-content h2 {
+    font-size: 32px;
+  }
+
+  .the1970-story-content p {
+    font-size: 14px;
+  }
+}
