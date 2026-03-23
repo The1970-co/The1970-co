@@ -1,7 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 1970</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
 <section class="the1970-editorial">
   <div class="the1970-editorial-grid">
 
-    <!-- LEFT HERO -->
     <div class="editorial-hero">
       <div class="editorial-hero-image">
         <img src="https://cdn0199.cdn4s.com/media/330ecc7e326b99ef7630ee3d87ffb925.jpg" alt="The 1970 Hero">
@@ -20,7 +29,6 @@
       </div>
     </div>
 
-    <!-- RIGHT SIDE -->
     <div class="editorial-side">
       <div class="editorial-intro has-bg">
         <div class="editorial-intro-bg">
@@ -82,3 +90,18 @@
   </div>
 </section>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var path = window.location.pathname.replace(/\/+$/, '');
+  var isHome = (path === '' || path === '/');
+
+  if (!isHome) {
+    document.querySelectorAll('.the1970-editorial').forEach(function(el){
+      el.remove();
+    });
+  }
+});
+</script>
+
+</body>
+</html>
