@@ -22,7 +22,7 @@
 
       <div class="the1970-top-actions">
         <a href="#">Search</a>
-        <a href="#">Cart</a>
+        <a href="#" id="headerCartBtn">Cart</a>
       </div>
     </div>
   </header>
@@ -45,13 +45,9 @@
 
       <div class="product-detail-info">
         <div class="product-detail-kicker">THE 1970</div>
-
         <h1>Heritage Pocket Tee</h1>
-
         <div class="product-detail-color">OLIVE ASH</div>
-
         <div class="product-detail-price">590.000đ</div>
-
         <div class="product-detail-stock">Còn hàng</div>
 
         <p class="product-detail-desc">
@@ -124,7 +120,6 @@
           </details>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -136,7 +131,6 @@
     </div>
 
     <div class="the1970-products-grid">
-
       <a href="product-detail.html" class="product-card">
         <div class="product-thumb">
           <img class="img-main" src="https://cdn0199.cdn4s.com/media/861%20xmas%2090.jpg" alt="Vintage Utility Shirt">
@@ -200,7 +194,6 @@
           </div>
         </div>
       </a>
-
     </div>
   </section>
 
@@ -221,30 +214,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>S</td>
-            <td>44</td>
-            <td>50</td>
-            <td>67</td>
-          </tr>
-          <tr>
-            <td>M</td>
-            <td>46</td>
-            <td>53</td>
-            <td>69</td>
-          </tr>
-          <tr>
-            <td>L</td>
-            <td>48</td>
-            <td>56</td>
-            <td>71</td>
-          </tr>
-          <tr>
-            <td>XL</td>
-            <td>50</td>
-            <td>59</td>
-            <td>73</td>
-          </tr>
+          <tr><td>S</td><td>44</td><td>50</td><td>67</td></tr>
+          <tr><td>M</td><td>46</td><td>53</td><td>69</td></tr>
+          <tr><td>L</td><td>48</td><td>56</td><td>71</td></tr>
+          <tr><td>XL</td><td>50</td><td>59</td><td>73</td></tr>
         </tbody>
       </table>
     </div>
@@ -264,7 +237,55 @@
     </div>
   </div>
 
+  <div class="mini-cart" id="miniCart" aria-hidden="true">
+    <div class="mini-cart-backdrop"></div>
+
+    <aside class="mini-cart-panel">
+      <div class="mini-cart-head">
+        <h3>Giỏ hàng</h3>
+        <button type="button" class="mini-cart-close" id="miniCartClose">×</button>
+      </div>
+
+      <div class="mini-cart-body" id="miniCartBody">
+        <div class="mini-cart-empty">Chưa có sản phẩm nào.</div>
+      </div>
+
+      <div class="mini-cart-foot">
+        <div class="mini-cart-total">
+          <span>Tạm tính</span>
+          <strong id="miniCartTotal">0đ</strong>
+        </div>
+        <div class="mini-cart-actions">
+          <a href="#" class="mini-cart-view">Xem giỏ hàng</a>
+          <a href="#" class="mini-cart-checkout">Thanh toán</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
   <script>
+    const CART_KEY = 'the1970_cart';
+
+    function getCart() {
+      try {
+        return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    }
+
+    function parsePrice(priceText) {
+      return Number((priceText || '').replace(/[^\d]/g, '')) || 0;
+    }
+
+    function formatPrice(value) {
+      return value.toLocaleString('vi-VN') + 'đ';
+    }
+
     const mainImage = document.getElementById('mainProductImage');
     const thumbs = document.querySelectorAll('.thumb');
 
@@ -336,11 +357,8 @@
     function toggleStickyBar() {
       if (!detailActions || !stickyBar) return;
       const rect = detailActions.getBoundingClientRect();
-      if (rect.bottom < 0) {
-        stickyBar.classList.add('show');
-      } else {
-        stickyBar.classList.remove('show');
-      }
+      if (rect.bottom < 0) stickyBar.classList.add('show');
+      else stickyBar.classList.remove('show');
     }
 
     window.addEventListener('scroll', toggleStickyBar);
@@ -351,37 +369,105 @@
       sizeGuideModal.setAttribute('aria-hidden', 'false');
     });
 
+    const miniCart = document.getElementById('miniCart');
+    const miniCartBody = document.getElementById('miniCartBody');
+    const miniCartTotal = document.getElementById('miniCartTotal');
+    const miniCartClose = document.getElementById('miniCartClose');
+    const miniCartBackdrop = document.querySelector('.mini-cart-backdrop');
+
+    function openMiniCart() {
+      miniCart.classList.add('open');
+      miniCart.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeMiniCart() {
+      miniCart.classList.remove('open');
+      miniCart.setAttribute('aria-hidden', 'true');
+    }
+
+    function renderMiniCart() {
+      const cart = getCart();
+
+      if (!cart.length) {
+        miniCartBody.innerHTML = '<div class="mini-cart-empty">Chưa có sản phẩm nào.</div>';
+        miniCartTotal.textContent = '0đ';
+        return;
+      }
+
+      miniCartBody.innerHTML = cart.map((item, index) => `
+        <div class="mini-cart-item">
+          <img src="${item.image}" alt="${item.name}">
+          <div>
+            <h4>${item.name}</h4>
+            <p>${item.color}</p>
+            <div class="mini-cart-meta">
+              <span>SL: ${item.qty}</span>
+              <strong>${item.price}</strong>
+            </div>
+            <button type="button" class="mini-cart-remove" data-index="${index}">Xóa</button>
+          </div>
+        </div>
+      `).join('');
+
+      const total = cart.reduce((sum, item) => sum + parsePrice(item.price) * item.qty, 0);
+      miniCartTotal.textContent = formatPrice(total);
+
+      document.querySelectorAll('.mini-cart-remove').forEach((btn) => {
+        btn.addEventListener('click', function () {
+          const cart = getCart();
+          cart.splice(Number(this.dataset.index), 1);
+          saveCart(cart);
+          renderMiniCart();
+        });
+      });
+    }
+
+    function getSelectedSize() {
+      const active = document.querySelector('.product-detail-size-row button.is-active');
+      return active ? active.textContent.trim() : null;
+    }
+
+    function addCurrentProductToCart() {
+      const cart = getCart();
+      const size = getSelectedSize();
+      const qty = Number(qtyInput.value || 1);
+
+      cart.push({
+        name: 'Heritage Pocket Tee',
+        color: 'Olive Ash' + (size ? ` / ${size}` : ''),
+        price: '590.000đ',
+        image: document.getElementById('mainProductImage').src,
+        qty: qty
+      });
+
+      saveCart(cart);
+      renderMiniCart();
+      openMiniCart();
+    }
+
+    document.querySelector('.detail-addcart')?.addEventListener('click', addCurrentProductToCart);
+    document.querySelector('.detail-buynow')?.addEventListener('click', addCurrentProductToCart);
+    document.querySelector('.sticky-addcart-btn')?.addEventListener('click', addCurrentProductToCart);
+
+    miniCartClose?.addEventListener('click', closeMiniCart);
+    miniCartBackdrop?.addEventListener('click', closeMiniCart);
+
+    document.getElementById('headerCartBtn')?.addEventListener('click', function (e) {
+      e.preventDefault();
+      renderMiniCart();
+      openMiniCart();
+    });
+
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         sizeGuideModal?.classList.remove('open');
         sizeGuideModal?.setAttribute('aria-hidden', 'true');
+        closeMiniCart();
       }
     });
+
+    renderMiniCart();
   </script>
-<div class="mini-cart" id="miniCart" aria-hidden="true">
-  <div class="mini-cart-backdrop"></div>
 
-  <aside class="mini-cart-panel">
-    <div class="mini-cart-head">
-      <h3>Giỏ hàng</h3>
-      <button type="button" class="mini-cart-close" id="miniCartClose">×</button>
-    </div>
-
-    <div class="mini-cart-body" id="miniCartBody">
-      <div class="mini-cart-empty">Chưa có sản phẩm nào.</div>
-    </div>
-
-    <div class="mini-cart-foot">
-      <div class="mini-cart-total">
-        <span>Tạm tính</span>
-        <strong id="miniCartTotal">0đ</strong>
-      </div>
-      <div class="mini-cart-actions">
-        <a href="#" class="mini-cart-view">Xem giỏ hàng</a>
-        <a href="#" class="mini-cart-checkout">Thanh toán</a>
-      </div>
-    </div>
-  </aside>
-</div>
 </body>
 </html>
