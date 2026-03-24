@@ -1929,366 +1929,188 @@ body.menu-open .the1970-editorial {
 .product-accordion {
   margin-top: 24px;
 }
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heritage Pocket Tee - The 1970</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* ===== MINI CART ===== */
+.mini-cart {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all .25s ease;
+}
 
-  <header class="the1970-topbar">
-    <div class="the1970-topbar-inner">
-      <div class="the1970-brand">THE 1970</div>
+.mini-cart.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
 
-      <nav class="the1970-mainnav">
-        <a href="index.html">Home</a>
-        <a href="#">T-Shirts</a>
-        <a href="#">Shirts</a>
-        <a href="#">Bottoms</a>
-        <a href="#">Collection</a>
-      </nav>
+.mini-cart-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+}
 
-      <div class="the1970-top-actions">
-        <a href="#">Search</a>
-        <a href="#">Cart</a>
-      </div>
-    </div>
-  </header>
+.mini-cart-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(460px, 100%);
+  height: 100%;
+  background: #f5efe8;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  transform: translateX(100%);
+  transition: transform .28s ease;
+  box-shadow: -10px 0 40px rgba(0,0,0,.12);
+}
 
-  <section class="product-detail-page">
-    <div class="product-detail-grid">
+.mini-cart.open .mini-cart-panel {
+  transform: translateX(0);
+}
 
-      <div class="product-detail-gallery">
-        <div class="product-detail-main">
-          <img id="mainProductImage" src="https://cdn0199.cdn4s.com/media/3e12438546111e95cdfb901fd723bd8b.jpg" alt="Heritage Pocket Tee">
-        </div>
+.mini-cart-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 22px 18px;
+  border-bottom: 1px solid rgba(31,29,26,.10);
+}
 
-        <div class="product-detail-thumbs">
-          <img class="thumb is-active" src="https://cdn0199.cdn4s.com/media/3e12438546111e95cdfb901fd723bd8b.jpg" alt="thumb 1">
-          <img class="thumb" src="https://cdn0199.cdn4s.com/media/861%20v%C3%A0ng%208.jpg" alt="thumb 2">
-          <img class="thumb" src="https://cdn0199.cdn4s.com/media/330ecc7e326b99ef7630ee3d87ffb925.jpg" alt="thumb 3">
-          <img class="thumb" src="https://cdn0199.cdn4s.com/media/861%20%C4%91en%203.jpg" alt="thumb 4">
-        </div>
-      </div>
+.mini-cart-head h3 {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: #1f1d1a;
+}
 
-      <div class="product-detail-info">
-        <div class="product-detail-kicker">THE 1970</div>
+.mini-cart-close {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: rgba(255,255,255,.7);
+  font-size: 24px;
+  cursor: pointer;
+}
 
-        <h1>Heritage Pocket Tee</h1>
+.mini-cart-body {
+  padding: 18px 22px;
+  overflow: auto;
+}
 
-        <div class="product-detail-color">OLIVE ASH</div>
+.mini-cart-empty {
+  font-size: 15px;
+  color: rgba(31,29,26,.62);
+}
 
-        <div class="product-detail-price">590.000đ</div>
+.mini-cart-item {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
+  padding: 0 0 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(31,29,26,.10);
+}
 
-        <div class="product-detail-stock">Còn hàng</div>
+.mini-cart-item img {
+  width: 100%;
+  aspect-ratio: .85 / 1;
+  object-fit: cover;
+  display: block;
+  background: #e8e0d5;
+}
 
-        <p class="product-detail-desc">
-          Áo phông heritage form gọn, chất vải dày vừa, tông olive trầm dễ mặc hằng ngày.
-          Thiết kế thiên về cảm giác vintage American nhưng vẫn sạch, gọn và dễ phối.
-        </p>
+.mini-cart-item h4 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #1f1d1a;
+  margin-bottom: 4px;
+}
 
-        <div class="product-detail-colors">
-          <div class="product-detail-label">Màu sắc</div>
-          <div class="product-color-row">
-            <button type="button" class="color-swatch is-active" aria-label="Olive Ash" style="background:#7b7863;"></button>
-            <button type="button" class="color-swatch" aria-label="Tobacco" style="background:#8a5b34;"></button>
-            <button type="button" class="color-swatch" aria-label="Vintage Navy" style="background:#232a3d;"></button>
-          </div>
-        </div>
+.mini-cart-item p {
+  font-size: 12px;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  color: rgba(31,29,26,.58);
+  margin-bottom: 8px;
+}
 
-        <div class="product-detail-size">
-          <div class="product-detail-label-row">
-            <div class="product-detail-label">Chọn size</div>
-            <a href="#" class="size-guide-link">Size guide</a>
-          </div>
+.mini-cart-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+  color: #1f1d1a;
+}
 
-          <div class="product-detail-size-row">
-            <button type="button">S</button>
-            <button type="button">M</button>
-            <button type="button">L</button>
-            <button type="button">XL</button>
-          </div>
-        </div>
+.mini-cart-remove {
+  margin-top: 10px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font-size: 12px;
+  color: rgba(31,29,26,.58);
+  text-decoration: underline;
+  cursor: pointer;
+}
 
-        <div class="product-qty-row">
-          <div class="qty-box">
-            <button type="button" class="qty-btn" id="qtyMinus">−</button>
-            <input type="text" value="1" id="qtyInput" readonly>
-            <button type="button" class="qty-btn" id="qtyPlus">+</button>
-          </div>
-        </div>
+.mini-cart-foot {
+  padding: 18px 22px 22px;
+  border-top: 1px solid rgba(31,29,26,.10);
+  background: #f5efe8;
+}
 
-        <div class="product-detail-actions">
-          <button type="button" class="detail-addcart">Thêm vào giỏ</button>
-          <button type="button" class="detail-buynow">Mua ngay</button>
-        </div>
+.mini-cart-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  font-size: 15px;
+  color: #1f1d1a;
+}
 
-        <div class="product-detail-meta">
-          <div><strong>Chất liệu:</strong> Cotton cao cấp</div>
-          <div><strong>Fit:</strong> Regular / Heritage</div>
-          <div><strong>Phong cách:</strong> Vintage American</div>
-        </div>
+.mini-cart-total strong {
+  font-size: 22px;
+  font-weight: 500;
+}
 
-        <div class="product-accordion">
-          <details open>
-            <summary>Mô tả chi tiết</summary>
-            <div class="accordion-content">
-              Vải cotton dày vừa, đứng form. Dễ phối layer hoặc mặc riêng.
-            </div>
-          </details>
+.mini-cart-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
 
-          <details>
-            <summary>Chất liệu & chăm sóc</summary>
-            <div class="accordion-content">
-              Giặt nước lạnh, không sấy nhiệt cao.
-            </div>
-          </details>
+.mini-cart-view,
+.mini-cart-checkout {
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: 1px solid #1f1d1a;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
 
-          <details>
-            <summary>Vận chuyển & đổi trả</summary>
-            <div class="accordion-content">
-              Hỗ trợ đổi size trong 7 ngày.
-            </div>
-          </details>
-        </div>
-      </div>
+.mini-cart-view {
+  background: transparent;
+  color: #1f1d1a;
+}
 
-    </div>
-  </section>
+.mini-cart-checkout {
+  background: #1f1d1a;
+  color: #fff;
+}
 
-  <section class="detail-related">
-    <div class="detail-related-head">
-      <span></span>
-      <h2>Có thể bạn cũng thích</h2>
-      <span></span>
-    </div>
+@media (max-width: 767px) {
+  .mini-cart-head h3 {
+    font-size: 26px;
+  }
 
-    <div class="the1970-products-grid">
-
-      <a href="product-detail.html" class="product-card">
-        <div class="product-thumb">
-          <img class="img-main" src="https://cdn0199.cdn4s.com/media/861%20xmas%2090.jpg" alt="Vintage Utility Shirt">
-          <img class="img-hover" src="https://cdn0199.cdn4s.com/media/861%20%C4%91en%203.jpg" alt="Vintage Utility Shirt Hover">
-          <div class="product-badge">Best Seller</div>
-        </div>
-        <div class="product-info">
-          <h3>Vintage Utility Shirt</h3>
-          <p>Tobacco</p>
-          <div class="product-bottom">
-            <span class="product-price">890.000đ</span>
-            <span class="product-more">View</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="product-detail.html" class="product-card">
-        <div class="product-thumb">
-          <img class="img-main" src="https://cdn0199.cdn4s.com/media/861%20v%C3%A0ng%208.jpg" alt="Seasonal Knit Polo">
-          <img class="img-hover" src="https://cdn0199.cdn4s.com/media/330ecc7e326b99ef7630ee3d87ffb925.jpg" alt="Seasonal Knit Polo Hover">
-          <div class="product-badge">New</div>
-        </div>
-        <div class="product-info">
-          <h3>Seasonal Knit Polo</h3>
-          <p>Heritage Sage</p>
-          <div class="product-bottom">
-            <span class="product-price">790.000đ</span>
-            <span class="product-more">View</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="product-detail.html" class="product-card">
-        <div class="product-thumb">
-          <img class="img-main" src="https://cdn0199.cdn4s.com/media/861%20%C4%91en%203.jpg" alt="Classic Straight Denim">
-          <img class="img-hover" src="https://cdn0199.cdn4s.com/media/861%20xmas%2090.jpg" alt="Classic Straight Denim Hover">
-          <div class="product-badge">Core</div>
-        </div>
-        <div class="product-info">
-          <h3>Classic Straight Denim</h3>
-          <p>Vintage Navy</p>
-          <div class="product-bottom">
-            <span class="product-price">990.000đ</span>
-            <span class="product-more">View</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="product-detail.html" class="product-card">
-        <div class="product-thumb">
-          <img class="img-main" src="https://cdn0199.cdn4s.com/media/3e12438546111e95cdfb901fd723bd8b.jpg" alt="Heritage Pocket Tee">
-          <img class="img-hover" src="https://cdn0199.cdn4s.com/media/861%20v%C3%A0ng%208.jpg" alt="Heritage Pocket Tee Hover">
-          <div class="product-badge">New</div>
-        </div>
-        <div class="product-info">
-          <h3>Heritage Pocket Tee</h3>
-          <p>Olive Ash</p>
-          <div class="product-bottom">
-            <span class="product-price">590.000đ</span>
-            <span class="product-more">View</span>
-          </div>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <div class="size-guide-modal" id="sizeGuideModal" aria-hidden="true">
-    <div class="size-guide-backdrop"></div>
-    <div class="size-guide-panel">
-      <button class="size-guide-close" id="sizeGuideClose" type="button">×</button>
-
-      <h3>Size Guide</h3>
-
-      <table class="size-guide-table">
-        <thead>
-          <tr>
-            <th>Size</th>
-            <th>Vai</th>
-            <th>Ngực</th>
-            <th>Dài áo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>S</td>
-            <td>44</td>
-            <td>50</td>
-            <td>67</td>
-          </tr>
-          <tr>
-            <td>M</td>
-            <td>46</td>
-            <td>53</td>
-            <td>69</td>
-          </tr>
-          <tr>
-            <td>L</td>
-            <td>48</td>
-            <td>56</td>
-            <td>71</td>
-          </tr>
-          <tr>
-            <td>XL</td>
-            <td>50</td>
-            <td>59</td>
-            <td>73</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="sticky-product-bar" id="stickyProductBar">
-    <div class="sticky-product-inner">
-      <div class="sticky-product-left">
-        <div class="sticky-product-name">Heritage Pocket Tee</div>
-        <div class="sticky-product-sub">Olive Ash · 590.000đ</div>
-      </div>
-
-      <div class="sticky-product-right">
-        <button type="button" class="sticky-size-btn" id="stickySizeBtn">Chọn size</button>
-        <button type="button" class="sticky-addcart-btn">Thêm vào giỏ</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const mainImage = document.getElementById('mainProductImage');
-    const thumbs = document.querySelectorAll('.thumb');
-
-    thumbs.forEach((thumb) => {
-      thumb.addEventListener('click', function () {
-        thumbs.forEach((t) => t.classList.remove('is-active'));
-        this.classList.add('is-active');
-        mainImage.src = this.src;
-      });
-    });
-
-    const qtyInput = document.getElementById('qtyInput');
-    const qtyMinus = document.getElementById('qtyMinus');
-    const qtyPlus = document.getElementById('qtyPlus');
-
-    qtyMinus?.addEventListener('click', () => {
-      const current = parseInt(qtyInput.value, 10);
-      qtyInput.value = Math.max(1, current - 1);
-    });
-
-    qtyPlus?.addEventListener('click', () => {
-      const current = parseInt(qtyInput.value, 10);
-      qtyInput.value = current + 1;
-    });
-
-    document.querySelectorAll('.product-detail-size-row button').forEach((btn) => {
-      btn.addEventListener('click', function () {
-        document.querySelectorAll('.product-detail-size-row button').forEach((b) => {
-          b.classList.remove('is-active');
-          b.style.borderColor = 'rgba(31,29,26,.14)';
-        });
-        this.classList.add('is-active');
-        this.style.borderColor = '#1f1d1a';
-      });
-    });
-
-    document.querySelectorAll('.color-swatch').forEach((btn) => {
-      btn.addEventListener('click', function () {
-        document.querySelectorAll('.color-swatch').forEach((b) => b.classList.remove('is-active'));
-        this.classList.add('is-active');
-      });
-    });
-
-    const sizeGuideModal = document.getElementById('sizeGuideModal');
-    const sizeGuideClose = document.getElementById('sizeGuideClose');
-    const sizeGuideLink = document.querySelector('.size-guide-link');
-    const sizeGuideBackdrop = document.querySelector('.size-guide-backdrop');
-
-    sizeGuideLink?.addEventListener('click', function (e) {
-      e.preventDefault();
-      sizeGuideModal.classList.add('open');
-      sizeGuideModal.setAttribute('aria-hidden', 'false');
-    });
-
-    sizeGuideClose?.addEventListener('click', function () {
-      sizeGuideModal.classList.remove('open');
-      sizeGuideModal.setAttribute('aria-hidden', 'true');
-    });
-
-    sizeGuideBackdrop?.addEventListener('click', function () {
-      sizeGuideModal.classList.remove('open');
-      sizeGuideModal.setAttribute('aria-hidden', 'true');
-    });
-
-    const stickyBar = document.getElementById('stickyProductBar');
-    const stickySizeBtn = document.getElementById('stickySizeBtn');
-    const detailActions = document.querySelector('.product-detail-actions');
-
-    function toggleStickyBar() {
-      if (!detailActions || !stickyBar) return;
-      const rect = detailActions.getBoundingClientRect();
-      if (rect.bottom < 0) {
-        stickyBar.classList.add('show');
-      } else {
-        stickyBar.classList.remove('show');
-      }
-    }
-
-    window.addEventListener('scroll', toggleStickyBar);
-    window.addEventListener('load', toggleStickyBar);
-
-    stickySizeBtn?.addEventListener('click', function () {
-      sizeGuideModal.classList.add('open');
-      sizeGuideModal.setAttribute('aria-hidden', 'false');
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        sizeGuideModal?.classList.remove('open');
-        sizeGuideModal?.setAttribute('aria-hidden', 'true');
-      }
-    });
-  </script>
-
-</body>
-</html>
+  .mini-cart-actions {
+    grid-template-columns: 1fr;
+  }
+}
