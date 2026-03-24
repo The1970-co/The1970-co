@@ -164,6 +164,20 @@
       </div>
     </a>
   </section>
+<script>
+  const els = document.querySelectorAll('.fade-up');
 
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  els.forEach(el => observer.observe(el));
+</script>
+<section class="the1970-featured-row fade-up">
+<section class="the1970-story-block fade-up">
 </body>
 </html>
