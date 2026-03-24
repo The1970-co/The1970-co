@@ -1,82 +1,170 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Detail - The 1970</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+<section class="product-detail-page">
+  <div class="product-detail-grid">
 
-  <header class="the1970-topbar">
-    <div class="the1970-topbar-inner">
-      <div class="the1970-brand">THE 1970</div>
+    <div class="product-detail-gallery">
+      <div class="product-detail-main">
+        <img id="mainProductImage" src="https://cdn0199.cdn4s.com/media/3e12438546111e95cdfb901fd723bd8b.jpg" alt="Heritage Pocket Tee" />
+      </div>
 
-      <nav class="the1970-mainnav">
-        <a href="index.html">Home</a>
-        <a href="/ao-phong">T-Shirts</a>
-        <a href="/so-mi">Shirts</a>
-        <a href="/quan">Bottoms</a>
-        <a href="/collections/all">Collection</a>
-      </nav>
-
-      <div class="the1970-top-actions">
-        <a href="/search">Search</a>
-        <a href="/cart">Cart</a>
+      <div class="product-detail-thumbs">
+        <img class="thumb is-active" src="https://cdn0199.cdn4s.com/media/3e12438546111e95cdfb901fd723bd8b.jpg" alt="thumb 1" />
+        <img class="thumb" src="https://cdn0199.cdn4s.com/media/861%20v%C3%A0ng%208.jpg" alt="thumb 2" />
+        <img class="thumb" src="https://cdn0199.cdn4s.com/media/330ecc7e326b99ef7630ee3d87ffb925.jpg" alt="thumb 3" />
+        <img class="thumb" src="https://cdn0199.cdn4s.com/media/861%20%C4%91en%203.jpg" alt="thumb 4" />
       </div>
     </div>
-  </header>
 
-  <section class="product-detail-page">
-    <div class="product-detail-grid">
+    <div class="product-detail-info">
+      <div class="product-detail-kicker">THE 1970</div>
+      <h1>Heritage Pocket Tee</h1>
+      <div class="product-detail-color">Olive Ash</div>
+      <div class="product-detail-price">590.000đ</div>
 
-      <div class="product-detail-gallery">
-        <div class="product-detail-main">
-          <img src="https://cdn0199.cdn4s.com/media/3e12438546111e95cdfb901fd723bd8b.jpg" alt="Heritage Pocket Tee" />
-        </div>
+      <div class="product-detail-stock">Còn hàng</div>
 
-        <div class="product-detail-thumbs">
-          <img src="https://cdn0199.cdn4s.com/media/3e12438546111e95cdfb901fd723bd8b.jpg" alt="thumb 1" />
-          <img src="https://cdn0199.cdn4s.com/media/861%20v%C3%A0ng%208.jpg" alt="thumb 2" />
-          <img src="https://cdn0199.cdn4s.com/media/330ecc7e326b99ef7630ee3d87ffb925.jpg" alt="thumb 3" />
+      <p class="product-detail-desc">
+        Áo phông heritage form gọn, chất vải dày vừa, tông olive trầm dễ mặc hằng ngày.
+        Thiết kế thiên về cảm giác vintage American nhưng vẫn sạch, gọn và dễ phối.
+      </p>
+
+      <div class="product-detail-colors">
+        <div class="product-detail-label">Màu sắc</div>
+        <div class="product-color-row">
+          <button type="button" class="color-swatch is-active" aria-label="Olive Ash" style="background:#7b7863;"></button>
+          <button type="button" class="color-swatch" aria-label="Tobacco" style="background:#8a5b34;"></button>
+          <button type="button" class="color-swatch" aria-label="Vintage Navy" style="background:#232a3d;"></button>
         </div>
       </div>
 
-      <div class="product-detail-info">
-        <div class="product-detail-kicker">THE 1970</div>
-        <h1>Heritage Pocket Tee</h1>
-        <div class="product-detail-color">Olive Ash</div>
-        <div class="product-detail-price">590.000đ</div>
-
-        <p class="product-detail-desc">
-          Áo phông heritage form gọn, chất vải dày vừa, tông olive trầm dễ mặc hằng ngày.
-          Thiết kế thiên về cảm giác vintage American nhưng vẫn sạch, gọn và dễ phối.
-        </p>
-
-        <div class="product-detail-size">
+      <div class="product-detail-size">
+        <div class="product-detail-label-row">
           <div class="product-detail-label">Chọn size</div>
-          <div class="product-detail-size-row">
-            <button type="button">S</button>
-            <button type="button">M</button>
-            <button type="button">L</button>
-            <button type="button">XL</button>
-          </div>
+          <a href="#" class="size-guide-link">Size guide</a>
         </div>
-
-        <div class="product-detail-actions">
-          <button type="button" class="detail-addcart">Thêm vào giỏ</button>
-          <button type="button" class="detail-buynow">Mua ngay</button>
-        </div>
-
-        <div class="product-detail-meta">
-          <div><strong>Chất liệu:</strong> Cotton cao cấp</div>
-          <div><strong>Fit:</strong> Regular / Heritage</div>
-          <div><strong>Phong cách:</strong> Vintage American</div>
+        <div class="product-detail-size-row">
+          <button type="button">S</button>
+          <button type="button">M</button>
+          <button type="button">L</button>
+          <button type="button">XL</button>
         </div>
       </div>
 
-    </div>
-  </section>
+      <div class="product-qty-row">
+        <div class="qty-box">
+          <button type="button" class="qty-btn" id="qtyMinus">−</button>
+          <input type="text" value="1" id="qtyInput" readonly>
+          <button type="button" class="qty-btn" id="qtyPlus">+</button>
+        </div>
+      </div>
 
-</body>
-</html>
+      <div class="product-detail-actions">
+        <button type="button" class="detail-addcart">Thêm vào giỏ</button>
+        <button type="button" class="detail-buynow">Mua ngay</button>
+      </div>
+
+      <div class="product-detail-meta">
+        <div><strong>Chất liệu:</strong> Cotton cao cấp</div>
+        <div><strong>Fit:</strong> Regular / Heritage</div>
+        <div><strong>Phong cách:</strong> Vintage American</div>
+      </div>
+
+      <div class="product-accordion">
+        <details open>
+          <summary>Mô tả chi tiết</summary>
+          <div class="accordion-content">
+            Vải cotton bề mặt chắc tay, lên form gọn. Phù hợp mặc riêng hoặc layer cùng sơ mi / jacket nhẹ.
+          </div>
+        </details>
+
+        <details>
+          <summary>Chất liệu & chăm sóc</summary>
+          <div class="accordion-content">
+            Cotton cao cấp. Giặt nhẹ với nước lạnh, lộn trái khi giặt, tránh sấy nhiệt cao.
+          </div>
+        </details>
+
+        <details>
+          <summary>Vận chuyển & đổi trả</summary>
+          <div class="accordion-content">
+            Giao hàng toàn quốc. Hỗ trợ đổi size nếu sản phẩm còn nguyên tem mác.
+          </div>
+        </details>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="detail-related">
+  <div class="detail-related-head">
+    <span></span>
+    <h2>Có thể bạn cũng thích</h2>
+    <span></span>
+  </div>
+
+  <div class="the1970-products-grid">
+    <a href="product-detail.html" class="product-card">
+      <div class="product-thumb">
+        <img class="img-main" src="https://cdn0199.cdn4s.com/media/861%20xmas%2090.jpg" alt="Vintage Utility Shirt" />
+        <img class="img-hover" src="https://cdn0199.cdn4s.com/media/861%20%C4%91en%203.jpg" alt="Vintage Utility Shirt Hover" />
+        <div class="product-badge">Best Seller</div>
+      </div>
+      <div class="product-info">
+        <h3>Vintage Utility Shirt</h3>
+        <p>Tobacco</p>
+        <div class="product-bottom">
+          <span class="product-price">890.000đ</span>
+          <span class="product-more">View</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="product-detail.html" class="product-card">
+      <div class="product-thumb">
+        <img class="img-main" src="https://cdn0199.cdn4s.com/media/861%20v%C3%A0ng%208.jpg" alt="Seasonal Knit Polo" />
+        <img class="img-hover" src="https://cdn0199.cdn4s.com/media/330ecc7e326b99ef7630ee3d87ffb925.jpg" alt="Seasonal Knit Polo Hover" />
+        <div class="product-badge">New</div>
+      </div>
+      <div class="product-info">
+        <h3>Seasonal Knit Polo</h3>
+        <p>Heritage Sage</p>
+        <div class="product-bottom">
+          <span class="product-price">790.000đ</span>
+          <span class="product-more">View</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="product-detail.html" class="product-card">
+      <div class="product-thumb">
+        <img class="img-main" src="https://cdn0199.cdn4s.com/media/861%20%C4%91en%203.jpg" alt="Classic Straight Denim" />
+        <img class="img-hover" src="https://cdn0199.cdn4s.com/media/861%20xmas%2090.jpg" alt="Classic Straight Denim Hover" />
+        <div class="product-badge">Core</div>
+      </div>
+      <div class="product-info">
+        <h3>Classic Straight Denim</h3>
+        <p>Vintage Navy</p>
+        <div class="product-bottom">
+          <span class="product-price">990.000đ</span>
+          <span class="product-more">View</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="product-detail.html" class="product-card">
+      <div class="product-thumb">
+        <img class="img-main" src="https://cdn0199.cdn4s.com/media/3e12438546111e95cdfb901fd723bd8b.jpg" alt="Heritage Pocket Tee" />
+        <img class="img-hover" src="https://cdn0199.cdn4s.com/media/861%20v%C3%A0ng%208.jpg" alt="Heritage Pocket Tee Hover" />
+        <div class="product-badge">New</div>
+      </div>
+      <div class="product-info">
+        <h3>Heritage Pocket Tee</h3>
+        <p>Olive Ash</p>
+        <div class="product-bottom">
+          <span class="product-price">590.000đ</span>
+          <span class="product-more">View</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
