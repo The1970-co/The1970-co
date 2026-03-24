@@ -439,8 +439,9 @@ a {
 }
 
 .the1970-featured-grid {
-  max-width: 1440px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 26px;
@@ -635,8 +636,9 @@ a {
 .the1970-story-media {
   position: relative;
   display: block;
-  max-width: 1440px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   overflow: hidden;
   aspect-ratio: 16 / 7;
   background: #ddd;
