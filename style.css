@@ -1731,3 +1731,153 @@ body.menu-open .the1970-editorial {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+.product-detail-stock {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: #2f5d38;
+}
+
+.product-detail-stock::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2f5d38;
+}
+
+.product-detail-colors {
+  margin-bottom: 24px;
+}
+
+.product-color-row {
+  display: flex;
+  gap: 10px;
+}
+
+.color-swatch {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.color-swatch.is-active {
+  border-color: #1f1d1a;
+}
+
+.product-detail-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.size-guide-link {
+  font-size: 13px;
+  color: rgba(31,29,26,.7);
+  text-decoration: underline;
+}
+
+.product-qty-row {
+  margin-bottom: 18px;
+}
+
+.qty-box {
+  display: inline-grid;
+  grid-template-columns: 44px 56px 44px;
+  border: 1px solid rgba(31,29,26,.14);
+  background: #fff;
+}
+
+.qty-btn {
+  border: 0;
+  background: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#qtyInput {
+  border: 0;
+  text-align: center;
+  background: #fff;
+  font-size: 15px;
+}
+
+.product-accordion {
+  margin-top: 28px;
+  border-top: 1px solid rgba(31,29,26,.12);
+}
+
+.product-accordion details {
+  border-bottom: 1px solid rgba(31,29,26,.12);
+}
+
+.product-accordion summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 0;
+  font-size: 15px;
+  color: #1f1d1a;
+  position: relative;
+}
+
+.product-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.product-accordion summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.product-accordion details[open] summary::after {
+  content: "−";
+}
+
+.accordion-content {
+  padding: 0 0 18px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(31,29,26,.76);
+}
+
+.thumb {
+  border: 2px solid transparent;
+}
+
+.thumb.is-active {
+  border-color: #1f1d1a;
+}
+
+.detail-related {
+  background: #f5efe8;
+  padding: 0 28px 52px;
+}
+
+.detail-related-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.detail-related-head span {
+  flex: 1;
+  height: 1px;
+  background: rgba(42,41,38,.14);
+}
+
+.detail-related-head h2 {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 34px;
+  font-weight: 400;
+  color: #1f1d1a;
+  white-space: nowrap;
+}
