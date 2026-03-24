@@ -1881,3 +1881,51 @@ body.menu-open .the1970-editorial {
   color: #1f1d1a;
   white-space: nowrap;
 }
+.product-detail-main {
+  overflow: hidden;
+}
+
+.product-detail-main img {
+  transition: transform .7s ease;
+}
+
+.product-detail-main:hover img {
+  transform: scale(1.03);
+}
+
+.product-detail-thumbs img {
+  border: 1px solid rgba(31,29,26,.08);
+  transition: all .2s ease;
+}
+
+.product-detail-thumbs img:hover {
+  border-color: rgba(31,29,26,.35);
+}
+
+.thumb.is-active {
+  border: 2px solid #1f1d1a !important;
+}
+
+.detail-addcart,
+.detail-buynow {
+  transition: all .2s ease;
+}
+
+.detail-addcart:hover,
+.detail-buynow:hover {
+  transform: translateY(-1px);
+}
+
+.detail-buynow {
+  background: #fff;
+}
+
+.product-detail-meta {
+  margin-top: 8px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(31,29,26,.10);
+}
+
+.product-accordion {
+  margin-top: 24px;
+}
