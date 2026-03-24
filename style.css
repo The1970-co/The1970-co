@@ -1202,3 +1202,27 @@ a {
     font-size: 16px;
   }
 }
+.mega-menu {
+  border: 1px solid rgba(42, 41, 38, .06);
+  box-shadow: 0 20px 50px rgba(0,0,0,.10);
+}
+.mega-menu-links a {
+  transition: color .2s ease, transform .2s ease;
+}
+
+.mega-menu-links a:hover {
+  color: #000;
+  transform: translateX(2px);
+}
+.mega-menu-image span {
+  left: 18px;
+  bottom: 16px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -.01em;
+}
+.the1970-mainnav > a,
+.the1970-mainnav .nav-item > a {
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
