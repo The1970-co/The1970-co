@@ -1929,3 +1929,366 @@ body.menu-open .the1970-editorial {
 .product-accordion {
   margin-top: 24px;
 }
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heritage Pocket Tee - The 1970</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="the1970-topbar">
+    <div class="the1970-topbar-inner">
+      <div class="the1970-brand">THE 1970</div>
+
+      <nav class="the1970-mainnav">
+        <a href="index.html">Home</a>
+        <a href="#">T-Shirts</a>
+        <a href="#">Shirts</a>
+        <a href="#">Bottoms</a>
+        <a href="#">Collection</a>
+      </nav>
+
+      <div class="the1970-top-actions">
+        <a href="#">Search</a>
+        <a href="#">Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="product-detail-page">
+    <div class="product-detail-grid">
+
+      <div class="product-detail-gallery">
+        <div class="product-detail-main">
+          <img id="mainProductImage" src="https://cdn0199.cdn4s.com/media/3e12438546111e95cdfb901fd723bd8b.jpg" alt="Heritage Pocket Tee">
+        </div>
+
+        <div class="product-detail-thumbs">
+          <img class="thumb is-active" src="https://cdn0199.cdn4s.com/media/3e12438546111e95cdfb901fd723bd8b.jpg" alt="thumb 1">
+          <img class="thumb" src="https://cdn0199.cdn4s.com/media/861%20v%C3%A0ng%208.jpg" alt="thumb 2">
+          <img class="thumb" src="https://cdn0199.cdn4s.com/media/330ecc7e326b99ef7630ee3d87ffb925.jpg" alt="thumb 3">
+          <img class="thumb" src="https://cdn0199.cdn4s.com/media/861%20%C4%91en%203.jpg" alt="thumb 4">
+        </div>
+      </div>
+
+      <div class="product-detail-info">
+        <div class="product-detail-kicker">THE 1970</div>
+
+        <h1>Heritage Pocket Tee</h1>
+
+        <div class="product-detail-color">OLIVE ASH</div>
+
+        <div class="product-detail-price">590.000đ</div>
+
+        <div class="product-detail-stock">Còn hàng</div>
+
+        <p class="product-detail-desc">
+          Áo phông heritage form gọn, chất vải dày vừa, tông olive trầm dễ mặc hằng ngày.
+          Thiết kế thiên về cảm giác vintage American nhưng vẫn sạch, gọn và dễ phối.
+        </p>
+
+        <div class="product-detail-colors">
+          <div class="product-detail-label">Màu sắc</div>
+          <div class="product-color-row">
+            <button type="button" class="color-swatch is-active" aria-label="Olive Ash" style="background:#7b7863;"></button>
+            <button type="button" class="color-swatch" aria-label="Tobacco" style="background:#8a5b34;"></button>
+            <button type="button" class="color-swatch" aria-label="Vintage Navy" style="background:#232a3d;"></button>
+          </div>
+        </div>
+
+        <div class="product-detail-size">
+          <div class="product-detail-label-row">
+            <div class="product-detail-label">Chọn size</div>
+            <a href="#" class="size-guide-link">Size guide</a>
+          </div>
+
+          <div class="product-detail-size-row">
+            <button type="button">S</button>
+            <button type="button">M</button>
+            <button type="button">L</button>
+            <button type="button">XL</button>
+          </div>
+        </div>
+
+        <div class="product-qty-row">
+          <div class="qty-box">
+            <button type="button" class="qty-btn" id="qtyMinus">−</button>
+            <input type="text" value="1" id="qtyInput" readonly>
+            <button type="button" class="qty-btn" id="qtyPlus">+</button>
+          </div>
+        </div>
+
+        <div class="product-detail-actions">
+          <button type="button" class="detail-addcart">Thêm vào giỏ</button>
+          <button type="button" class="detail-buynow">Mua ngay</button>
+        </div>
+
+        <div class="product-detail-meta">
+          <div><strong>Chất liệu:</strong> Cotton cao cấp</div>
+          <div><strong>Fit:</strong> Regular / Heritage</div>
+          <div><strong>Phong cách:</strong> Vintage American</div>
+        </div>
+
+        <div class="product-accordion">
+          <details open>
+            <summary>Mô tả chi tiết</summary>
+            <div class="accordion-content">
+              Vải cotton dày vừa, đứng form. Dễ phối layer hoặc mặc riêng.
+            </div>
+          </details>
+
+          <details>
+            <summary>Chất liệu & chăm sóc</summary>
+            <div class="accordion-content">
+              Giặt nước lạnh, không sấy nhiệt cao.
+            </div>
+          </details>
+
+          <details>
+            <summary>Vận chuyển & đổi trả</summary>
+            <div class="accordion-content">
+              Hỗ trợ đổi size trong 7 ngày.
+            </div>
+          </details>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="detail-related">
+    <div class="detail-related-head">
+      <span></span>
+      <h2>Có thể bạn cũng thích</h2>
+      <span></span>
+    </div>
+
+    <div class="the1970-products-grid">
+
+      <a href="product-detail.html" class="product-card">
+        <div class="product-thumb">
+          <img class="img-main" src="https://cdn0199.cdn4s.com/media/861%20xmas%2090.jpg" alt="Vintage Utility Shirt">
+          <img class="img-hover" src="https://cdn0199.cdn4s.com/media/861%20%C4%91en%203.jpg" alt="Vintage Utility Shirt Hover">
+          <div class="product-badge">Best Seller</div>
+        </div>
+        <div class="product-info">
+          <h3>Vintage Utility Shirt</h3>
+          <p>Tobacco</p>
+          <div class="product-bottom">
+            <span class="product-price">890.000đ</span>
+            <span class="product-more">View</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="product-detail.html" class="product-card">
+        <div class="product-thumb">
+          <img class="img-main" src="https://cdn0199.cdn4s.com/media/861%20v%C3%A0ng%208.jpg" alt="Seasonal Knit Polo">
+          <img class="img-hover" src="https://cdn0199.cdn4s.com/media/330ecc7e326b99ef7630ee3d87ffb925.jpg" alt="Seasonal Knit Polo Hover">
+          <div class="product-badge">New</div>
+        </div>
+        <div class="product-info">
+          <h3>Seasonal Knit Polo</h3>
+          <p>Heritage Sage</p>
+          <div class="product-bottom">
+            <span class="product-price">790.000đ</span>
+            <span class="product-more">View</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="product-detail.html" class="product-card">
+        <div class="product-thumb">
+          <img class="img-main" src="https://cdn0199.cdn4s.com/media/861%20%C4%91en%203.jpg" alt="Classic Straight Denim">
+          <img class="img-hover" src="https://cdn0199.cdn4s.com/media/861%20xmas%2090.jpg" alt="Classic Straight Denim Hover">
+          <div class="product-badge">Core</div>
+        </div>
+        <div class="product-info">
+          <h3>Classic Straight Denim</h3>
+          <p>Vintage Navy</p>
+          <div class="product-bottom">
+            <span class="product-price">990.000đ</span>
+            <span class="product-more">View</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="product-detail.html" class="product-card">
+        <div class="product-thumb">
+          <img class="img-main" src="https://cdn0199.cdn4s.com/media/3e12438546111e95cdfb901fd723bd8b.jpg" alt="Heritage Pocket Tee">
+          <img class="img-hover" src="https://cdn0199.cdn4s.com/media/861%20v%C3%A0ng%208.jpg" alt="Heritage Pocket Tee Hover">
+          <div class="product-badge">New</div>
+        </div>
+        <div class="product-info">
+          <h3>Heritage Pocket Tee</h3>
+          <p>Olive Ash</p>
+          <div class="product-bottom">
+            <span class="product-price">590.000đ</span>
+            <span class="product-more">View</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <div class="size-guide-modal" id="sizeGuideModal" aria-hidden="true">
+    <div class="size-guide-backdrop"></div>
+    <div class="size-guide-panel">
+      <button class="size-guide-close" id="sizeGuideClose" type="button">×</button>
+
+      <h3>Size Guide</h3>
+
+      <table class="size-guide-table">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Vai</th>
+            <th>Ngực</th>
+            <th>Dài áo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>S</td>
+            <td>44</td>
+            <td>50</td>
+            <td>67</td>
+          </tr>
+          <tr>
+            <td>M</td>
+            <td>46</td>
+            <td>53</td>
+            <td>69</td>
+          </tr>
+          <tr>
+            <td>L</td>
+            <td>48</td>
+            <td>56</td>
+            <td>71</td>
+          </tr>
+          <tr>
+            <td>XL</td>
+            <td>50</td>
+            <td>59</td>
+            <td>73</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sticky-product-bar" id="stickyProductBar">
+    <div class="sticky-product-inner">
+      <div class="sticky-product-left">
+        <div class="sticky-product-name">Heritage Pocket Tee</div>
+        <div class="sticky-product-sub">Olive Ash · 590.000đ</div>
+      </div>
+
+      <div class="sticky-product-right">
+        <button type="button" class="sticky-size-btn" id="stickySizeBtn">Chọn size</button>
+        <button type="button" class="sticky-addcart-btn">Thêm vào giỏ</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const mainImage = document.getElementById('mainProductImage');
+    const thumbs = document.querySelectorAll('.thumb');
+
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener('click', function () {
+        thumbs.forEach((t) => t.classList.remove('is-active'));
+        this.classList.add('is-active');
+        mainImage.src = this.src;
+      });
+    });
+
+    const qtyInput = document.getElementById('qtyInput');
+    const qtyMinus = document.getElementById('qtyMinus');
+    const qtyPlus = document.getElementById('qtyPlus');
+
+    qtyMinus?.addEventListener('click', () => {
+      const current = parseInt(qtyInput.value, 10);
+      qtyInput.value = Math.max(1, current - 1);
+    });
+
+    qtyPlus?.addEventListener('click', () => {
+      const current = parseInt(qtyInput.value, 10);
+      qtyInput.value = current + 1;
+    });
+
+    document.querySelectorAll('.product-detail-size-row button').forEach((btn) => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.product-detail-size-row button').forEach((b) => {
+          b.classList.remove('is-active');
+          b.style.borderColor = 'rgba(31,29,26,.14)';
+        });
+        this.classList.add('is-active');
+        this.style.borderColor = '#1f1d1a';
+      });
+    });
+
+    document.querySelectorAll('.color-swatch').forEach((btn) => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.color-swatch').forEach((b) => b.classList.remove('is-active'));
+        this.classList.add('is-active');
+      });
+    });
+
+    const sizeGuideModal = document.getElementById('sizeGuideModal');
+    const sizeGuideClose = document.getElementById('sizeGuideClose');
+    const sizeGuideLink = document.querySelector('.size-guide-link');
+    const sizeGuideBackdrop = document.querySelector('.size-guide-backdrop');
+
+    sizeGuideLink?.addEventListener('click', function (e) {
+      e.preventDefault();
+      sizeGuideModal.classList.add('open');
+      sizeGuideModal.setAttribute('aria-hidden', 'false');
+    });
+
+    sizeGuideClose?.addEventListener('click', function () {
+      sizeGuideModal.classList.remove('open');
+      sizeGuideModal.setAttribute('aria-hidden', 'true');
+    });
+
+    sizeGuideBackdrop?.addEventListener('click', function () {
+      sizeGuideModal.classList.remove('open');
+      sizeGuideModal.setAttribute('aria-hidden', 'true');
+    });
+
+    const stickyBar = document.getElementById('stickyProductBar');
+    const stickySizeBtn = document.getElementById('stickySizeBtn');
+    const detailActions = document.querySelector('.product-detail-actions');
+
+    function toggleStickyBar() {
+      if (!detailActions || !stickyBar) return;
+      const rect = detailActions.getBoundingClientRect();
+      if (rect.bottom < 0) {
+        stickyBar.classList.add('show');
+      } else {
+        stickyBar.classList.remove('show');
+      }
+    }
+
+    window.addEventListener('scroll', toggleStickyBar);
+    window.addEventListener('load', toggleStickyBar);
+
+    stickySizeBtn?.addEventListener('click', function () {
+      sizeGuideModal.classList.add('open');
+      sizeGuideModal.setAttribute('aria-hidden', 'false');
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        sizeGuideModal?.classList.remove('open');
+        sizeGuideModal?.setAttribute('aria-hidden', 'true');
+      }
+    });
+  </script>
+
+</body>
+</html>
