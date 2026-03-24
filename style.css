@@ -886,6 +886,124 @@ a {
     font-size: 28px;
   }
 }
+/* ===== MEGA MENU ===== */
+
+.the1970-mainnav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 42px;
+}
+
+.the1970-mainnav .nav-item {
+  position: relative;
+}
+
+.the1970-mainnav > a,
+.the1970-mainnav .nav-item > a {
+  position: relative;
+  display: inline-block;
+  padding: 28px 0;
+}
+
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  width: 760px;
+  background: #f5efe8;
+  border: 1px solid rgba(42, 41, 38, .08);
+  box-shadow: 0 14px 40px rgba(0,0,0,.08);
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all .25s ease;
+  z-index: 30;
+}
+
+.has-dropdown:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.mega-menu-grid {
+  display: grid;
+  grid-template-columns: 180px 180px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.mega-menu-links h4 {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(31,29,26,.6);
+  margin-bottom: 14px;
+}
+
+.mega-menu-links a {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #1f1d1a;
+}
+
+.mega-menu-image {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: #e8e0d5;
+  aspect-ratio: 1.1 / 1;
+}
+
+.mega-menu-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.mega-menu-image span {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  color: #fff;
+  font-size: 14px;
+  z-index: 2;
+}
+
+.mega-menu-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.42), rgba(0,0,0,.05));
+}
+
+.mega-menu-image:hover img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 1100px) {
+  .mega-menu {
+    width: 680px;
+  }
+
+  .mega-menu-grid {
+    grid-template-columns: 160px 160px 1fr;
+    gap: 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  .mega-menu {
+    display: none;
+  }
+}
 /* ===== PRODUCT GRID ===== */
 
 .the1970-products-section {
