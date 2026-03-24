@@ -789,3 +789,27 @@ a {
   letter-spacing: -0.03em;
   max-width: 720px;
 }
+/* ===== VARIATION ===== */
+
+.the1970-story-block.alt-light .the1970-story-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.42) 0%,
+    rgba(0,0,0,.10) 45%,
+    rgba(0,0,0,.02) 100%
+  );
+}
+
+.the1970-story-block.alt-dark .the1970-story-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.65) 0%,
+    rgba(0,0,0,.28) 40%,
+    rgba(0,0,0,.08) 100%
+  );
+}
+
+/* spacing giữa các block */
+.the1970-story-block + .the1970-story-block {
+  margin-top: 24px;
+}
