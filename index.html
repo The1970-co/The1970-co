@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -95,14 +95,13 @@
 
       <div class="the1970-top-actions">
         <a href="/search">Search</a>
-        <a href="/cart">Cart</a>
+        <a href="#" id="headerCartBtn">Cart</a>
       </div>
     </div>
   </header>
 
   <section class="the1970-editorial">
     <div class="the1970-editorial-grid">
-
       <div class="editorial-hero">
         <div class="editorial-hero-image">
           <img src="https://cdn0199.cdn4s.com/media/330ecc7e326b99ef7630ee3d87ffb925.jpg" alt="The 1970 Hero" />
@@ -177,13 +176,11 @@
           </a>
         </div>
       </div>
-
     </div>
   </section>
 
   <section class="the1970-featured-row fade-up">
     <div class="the1970-featured-grid">
-
       <a href="/hang-moi-ve-the-1970" class="the1970-featured-card">
         <div class="the1970-featured-head">
           <span></span>
@@ -216,7 +213,6 @@
           <img class="img-hover" src="https://cdn0199.cdn4s.com/media/861%20xmas%2090.jpg" alt="Chi tiết BST Theo Mùa" />
         </div>
       </a>
-
     </div>
   </section>
 
@@ -224,7 +220,6 @@
     <a href="/collections/all" class="the1970-story-media">
       <img src="https://cdn0199.cdn4s.com/media/330ecc7e326b99ef7630ee3d87ffb925.jpg" alt="The 1970 Story" />
       <div class="the1970-story-overlay"></div>
-
       <div class="the1970-story-content">
         <div class="the1970-story-kicker">THE 1970 JOURNAL</div>
         <h2>Seasonal layers, vintage tones, and everyday American mood.</h2>
@@ -235,7 +230,6 @@
   </section>
 
   <section class="the1970-story-split fade-up">
-
     <a href="/hang-moi-ve-the-1970" class="the1970-story-media split">
       <img src="https://cdn0199.cdn4s.com/media/861%20v%C3%A0ng%208.jpg" alt="New Product" />
       <div class="the1970-story-overlay"></div>
@@ -255,7 +249,6 @@
         <span class="the1970-story-btn">Explore</span>
       </div>
     </a>
-
   </section>
 
   <section class="the1970-products-section fade-up">
@@ -409,17 +402,61 @@
     </div>
   </div>
 
-  <script>
-    const els = document.querySelectorAll('.fade-up');
+  <div class="mini-cart" id="miniCart" aria-hidden="true">
+    <div class="mini-cart-backdrop"></div>
 
+    <aside class="mini-cart-panel">
+      <div class="mini-cart-head">
+        <h3>Giỏ hàng</h3>
+        <button type="button" class="mini-cart-close" id="miniCartClose">×</button>
+      </div>
+
+      <div class="mini-cart-body" id="miniCartBody">
+        <div class="mini-cart-empty">Chưa có sản phẩm nào.</div>
+      </div>
+
+      <div class="mini-cart-foot">
+        <div class="mini-cart-total">
+          <span>Tạm tính</span>
+          <strong id="miniCartTotal">0đ</strong>
+        </div>
+        <div class="mini-cart-actions">
+          <a href="#" class="mini-cart-view">Xem giỏ hàng</a>
+          <a href="#" class="mini-cart-checkout">Thanh toán</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    const CART_KEY = 'the1970_cart';
+
+    function getCart() {
+      try {
+        return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    }
+
+    function parsePrice(priceText) {
+      return Number((priceText || '').replace(/[^\d]/g, '')) || 0;
+    }
+
+    function formatPrice(value) {
+      return value.toLocaleString('vi-VN') + 'đ';
+    }
+
+    const els = document.querySelectorAll('.fade-up');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('show');
       });
     }, { threshold: 0.2 });
-
     els.forEach((el) => observer.observe(el));
 
     const quickviewModal = document.getElementById('quickviewModal');
@@ -430,14 +467,24 @@
     const qvPrice = document.getElementById('qvPrice');
     const qvDesc = document.getElementById('qvDesc');
     const qvDetailLink = document.getElementById('qvDetailLink');
+    const qvAddCart = document.querySelector('.quickview-addcart');
+    let currentQuickviewProduct = null;
 
     function openQuickview(card) {
-      qvImage.src = card.dataset.image || '';
-      qvName.textContent = card.dataset.name || '';
-      qvColor.textContent = card.dataset.color || '';
-      qvPrice.textContent = card.dataset.price || '';
+      currentQuickviewProduct = {
+        name: card.dataset.name || '',
+        color: card.dataset.color || '',
+        price: card.dataset.price || '',
+        image: card.dataset.image || '',
+        href: card.getAttribute('href') || 'product-detail.html'
+      };
+
+      qvImage.src = currentQuickviewProduct.image;
+      qvName.textContent = currentQuickviewProduct.name;
+      qvColor.textContent = currentQuickviewProduct.color;
+      qvPrice.textContent = currentQuickviewProduct.price;
       qvDesc.textContent = card.dataset.desc || '';
-      qvDetailLink.href = card.getAttribute('href') || 'product-detail.html';
+      qvDetailLink.href = currentQuickviewProduct.href;
 
       quickviewModal.classList.add('open');
       quickviewModal.setAttribute('aria-hidden', 'false');
@@ -459,49 +506,125 @@
       });
     });
 
+    quickviewClose?.addEventListener('click', closeQuickview);
+    document.querySelector('.quickview-backdrop')?.addEventListener('click', closeQuickview);
+
+    const miniCart = document.getElementById('miniCart');
+    const miniCartBody = document.getElementById('miniCartBody');
+    const miniCartTotal = document.getElementById('miniCartTotal');
+    const miniCartClose = document.getElementById('miniCartClose');
+    const miniCartBackdrop = document.querySelector('.mini-cart-backdrop');
+
+    function openMiniCart() {
+      miniCart.classList.add('open');
+      miniCart.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeMiniCart() {
+      miniCart.classList.remove('open');
+      miniCart.setAttribute('aria-hidden', 'true');
+    }
+
+    function addToCart(product) {
+      const cart = getCart();
+      const existed = cart.find((item) => item.name === product.name && item.color === product.color);
+      if (existed) {
+        existed.qty += 1;
+      } else {
+        cart.push({
+          name: product.name,
+          color: product.color,
+          price: product.price,
+          image: product.image,
+          qty: 1
+        });
+      }
+      saveCart(cart);
+      renderMiniCart();
+      openMiniCart();
+    }
+
+    function removeCartItem(index) {
+      const cart = getCart();
+      cart.splice(index, 1);
+      saveCart(cart);
+      renderMiniCart();
+    }
+
+    function renderMiniCart() {
+      const cart = getCart();
+
+      if (!cart.length) {
+        miniCartBody.innerHTML = '<div class="mini-cart-empty">Chưa có sản phẩm nào.</div>';
+        miniCartTotal.textContent = '0đ';
+        return;
+      }
+
+      miniCartBody.innerHTML = cart.map((item, index) => `
+        <div class="mini-cart-item">
+          <img src="${item.image}" alt="${item.name}">
+          <div>
+            <h4>${item.name}</h4>
+            <p>${item.color}</p>
+            <div class="mini-cart-meta">
+              <span>SL: ${item.qty}</span>
+              <strong>${item.price}</strong>
+            </div>
+            <button type="button" class="mini-cart-remove" data-index="${index}">Xóa</button>
+          </div>
+        </div>
+      `).join('');
+
+      const total = cart.reduce((sum, item) => sum + parsePrice(item.price) * item.qty, 0);
+      miniCartTotal.textContent = formatPrice(total);
+
+      document.querySelectorAll('.mini-cart-remove').forEach((btn) => {
+        btn.addEventListener('click', function () {
+          removeCartItem(Number(this.dataset.index));
+        });
+      });
+    }
+
     document.querySelectorAll('.btn-buy').forEach((btn) => {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
         const card = this.closest('.product-card');
-        const name = card?.dataset?.name || 'Sản phẩm';
-        alert('Mua hàng: ' + name);
+        if (!card) return;
+
+        addToCart({
+          name: card.dataset.name || '',
+          color: card.dataset.color || '',
+          price: card.dataset.price || '',
+          image: card.dataset.image || ''
+        });
       });
     });
 
-    if (quickviewClose) quickviewClose.addEventListener('click', closeQuickview);
+    qvAddCart?.addEventListener('click', function () {
+      if (!currentQuickviewProduct) return;
+      addToCart(currentQuickviewProduct);
+      closeQuickview();
+    });
 
-    const backdrop = document.querySelector('.quickview-backdrop');
-    if (backdrop) backdrop.addEventListener('click', closeQuickview);
+    miniCartClose?.addEventListener('click', closeMiniCart);
+    miniCartBackdrop?.addEventListener('click', closeMiniCart);
+
+    document.getElementById('headerCartBtn')?.addEventListener('click', function (e) {
+      e.preventDefault();
+      renderMiniCart();
+      openMiniCart();
+    });
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeQuickview();
+      if (e.key === 'Escape') {
+        closeQuickview();
+        closeMiniCart();
+      }
     });
+
+    renderMiniCart();
   </script>
-<div class="mini-cart" id="miniCart" aria-hidden="true">
-  <div class="mini-cart-backdrop"></div>
 
-  <aside class="mini-cart-panel">
-    <div class="mini-cart-head">
-      <h3>Giỏ hàng</h3>
-      <button type="button" class="mini-cart-close" id="miniCartClose">×</button>
-    </div>
-
-    <div class="mini-cart-body" id="miniCartBody">
-      <div class="mini-cart-empty">Chưa có sản phẩm nào.</div>
-    </div>
-
-    <div class="mini-cart-foot">
-      <div class="mini-cart-total">
-        <span>Tạm tính</span>
-        <strong id="miniCartTotal">0đ</strong>
-      </div>
-      <div class="mini-cart-actions">
-        <a href="#" class="mini-cart-view">Xem giỏ hàng</a>
-        <a href="#" class="mini-cart-checkout">Thanh toán</a>
-      </div>
-    </div>
-  </aside>
-</div>
 </body>
 </html>
