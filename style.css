@@ -1243,3 +1243,7 @@ a {
   top: -32px;
   height: 32px;
 }
+body.menu-open .the1970-editorial {
+  filter: brightness(.7);
+  transition: .3s;
+}
