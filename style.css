@@ -910,7 +910,7 @@ a {
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(10px);
+  transform: translateX(-50%);
   width: 760px;
   background: #f5efe8;
   border: 1px solid rgba(42, 41, 38, .08);
